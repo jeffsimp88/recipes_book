@@ -1,0 +1,11 @@
+<h1>{{recipe.title}}</h1>
+<h3>by <a href="/authors/{{recipe.author.id}}">{{recipe.author.name}}</a> </h3>
+
+<p><strong>About the Recipe: </strong> <br> {{recipe.description}}</p>
+
+<p>Time Required: {{recipe.time_required}}</p>
+<p style="width: 50%;">
+    {{recipe.instructions}}
+</p>
+
+<h5><a href="/">Back to Homepage</a></h5>
