@@ -1,1 +1,9 @@
-<h1>Hello World!</h1>
+<h1>Try out some Recipes!</h1>
+<h3>Brought to you by these famous celebrities.</h3>
+<ul>
+    {% for item in recipes%}
+    <li><a href="/recipes/{{item.id}}">{{item.title}}</a> by <a
+            href="/authors/{{item.author.id}}">{{item.author.name}}</a> </li>
+    {% endfor %}
+
+</ul>
