@@ -2,8 +2,7 @@
 <h3>Brought to you by these famous celebrities.</h3>
 <ul>
     {% for item in recipes%}
-    <li><a href="/recipes/{{item.id}}">{{item.title}}</a> by <a
-            href="/authors/{{item.author.id}}">{{item.author.name}}</a> </li>
+    <li><a href="/recipes/{{item.id}}">{{item.title}}</a> </li>
     {% endfor %}
 
 </ul>
