@@ -1,4 +1,48 @@
 body{
-    color: whitesmoke;
+    color: rgb(197, 205, 210);
     background-color: rgb(32, 32, 32);
+    padding: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#authorBox{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 2%;
+    width: fit-content;
+    background-color: rgb(36, 36, 59);
+}
+
+#recipeBox{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 2%;
+    width: fit-content;
+    background-color: rgb(42, 56, 42);
+}
+
+img{
+    border-radius: 3%;
+    height: 100px;
+}
+
+p{
+    white-space: pre-line;
+}
+
+li{
+    font-size: 20px;
+    padding: 3px;
+}
+
+a{
+    color: rgb(177, 177, 36);
+    transition-duration: .2s;
+}
+a:hover{
+    color: rgb(116, 192, 45);
+    background-color: rgba(1, 1, 58, 0.22);
 }
