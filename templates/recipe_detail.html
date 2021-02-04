@@ -1,12 +1,14 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-<h1>{{recipe.title}}</h1>
-<h3>by <a href="/authors/{{recipe.author.id}}">{{recipe.author.name}}</a> </h3>
+<div id="titleBox">
+    <h1>{{recipe.title}}</h1>
+    <h3>by <a href="/authors/{{recipe.author.id}}">{{recipe.author.name}}</a> </h3>
 
-<p><strong>About the Recipe: </strong> <br> {{recipe.description}}</p>
+    <p><strong>About the Recipe: </strong> <br> {{recipe.description}}</p>
 
-<p><strong>Time Required:</strong> {{recipe.time_required}}</p>
+    <p><strong>Time Required:</strong> {{recipe.time_required}}</p>
+</div>
 <p id="recipeBox" style="width: 50%;">
     {{recipe.instructions}}
 </p>

@@ -1,12 +1,13 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<div id="titleBox">
+    <h1>Try out some Recipes!</h1>
+    <h3>Click on one of the recipes below:</h3>
+    <ul>
+        {% for item in recipes%}
+        <li><a href="/recipes/{{item.id}}">{{item.title}}</a> </li>
+        {% endfor %}
 
-<h1>Try out some Recipes!</h1>
-<h3>Click on one of the recipes below:</h3>
-<ul>
-    {% for item in recipes%}
-    <li><a href="/recipes/{{item.id}}">{{item.title}}</a> </li>
-    {% endfor %}
-
-</ul>
+    </ul>
+</div>
