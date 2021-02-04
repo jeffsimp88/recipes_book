@@ -1,37 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display&family=Roboto+Slab&display=swap');@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Slab&display=swap');
 body{
     color: rgb(197, 205, 210);
     background-color: rgb(32, 32, 32);
     background-image: url('/static/images/background.jpg');
     background-size: cover;
-    padding: 15px;
+    padding: 15px 15px 15px 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#authorBox{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 2%;
-    width: fit-content;
-    background-color: rgb(36, 36, 59, 0.7);
-}
-#titleBox{
-    padding: 10px;
-    margin: 5px;
-    border-radius: 2%;
-    width: fit-content;
-    background-color: rgb(36, 36, 59, 0.7);
+h1{
+    font-family: 'Playfair Display', serif;
 }
 
-#recipeBox{
-    padding: 10px;
-    margin: 5px;
-    border-radius: 2%;
-    width: fit-content;
-    background-color: rgba(42, 56, 42, 0.7);
+h3, h5{
+    font-family: 'Roboto Slab', serif;
 }
+
+
 
 img{
     border-radius: 3%;
@@ -41,18 +26,49 @@ img{
 
 p{
     white-space: pre-line;
+    font-family: 'Merriweather', serif;
 }
 
 li{
     font-size: 20px;
     padding: 3px;
+    font-family: 'Merriweather', serif;
 }
 
 a{
     color: rgb(177, 177, 36);
     transition-duration: .2s;
+    text-decoration: none;
 }
 a:hover{
     color: rgb(116, 192, 45);
     background-color: rgba(1, 1, 58, 0.22);
+}
+#authorBox{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 2%;
+    min-width: fit-content;
+    max-width: 468px;
+    background-color: rgb(36, 36, 59, 0.7);
+}
+#titleBox{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 2%;
+    min-width: fit-content;
+    max-width: 468px;
+    background-color: rgb(36, 36, 59, 0.7);
+}
+
+#recipeBox{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 2%;
+    min-width: fit-content;
+    max-width: 468px;
+    background-color: rgba(42, 56, 42, 0.7);
 }
