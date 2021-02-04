@@ -1,3 +1,6 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 <h1>{{recipe.title}}</h1>
 <h3>by <a href="/authors/{{recipe.author.id}}">{{recipe.author.name}}</a> </h3>
 
