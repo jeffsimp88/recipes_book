@@ -3,14 +3,15 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 <div id="titleBox">
     <h1>{{recipe.title}}</h1>
+    <!-- <h3>by <a href="/authors/{{recipe.author.name|lower|slugify}}">{{recipe.author.name}}</a> </h3> -->
     <h3>by <a href="/authors/{{recipe.author.id}}">{{recipe.author.name}}</a> </h3>
 
     <p><strong>About the Recipe: </strong> <br> {{recipe.description}}</p>
 
     <p><strong>Time Required:</strong> {{recipe.time_required}}</p>
+    <p id="recipeBox" style="width: 50%;">
+        {{recipe.instructions}}
+    </p>
 </div>
-<p id="recipeBox" style="width: 50%;">
-    {{recipe.instructions}}
-</p>
 
 <h5><a href="/">Back to Homepage</a></h5>
