@@ -73,3 +73,14 @@ a:hover{
     max-width: 468px;
     background-color: rgba(42, 56, 42, 0.7);
 }
+
+#linksBox{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 2%;
+    min-width: fit-content;
+    max-width: 234px;
+    background-color: rgba(42, 56, 42, 0.7);    
+}
