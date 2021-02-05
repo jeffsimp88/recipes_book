@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<div id="titleBox">
+    <h1>{{heading}}</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit!">
+    </form>
+</div>
+
+<h5><a href="/">Back to Homepage</a></h5>
