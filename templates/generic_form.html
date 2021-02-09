@@ -3,6 +3,13 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 <div id="titleBox">
     <h1>{{heading}}</h1>
+
+    {% if logging_in %}
+    <h3> Not a current user? <a href="/signup">Signup!</a></h3>
+    {% elif signing_in %}
+    <h3> Already a current user? <a href="/login">Login!</a></h3>
+    {% endif %}
+
     <form action="" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
