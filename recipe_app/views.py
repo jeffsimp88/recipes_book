@@ -65,12 +65,21 @@ def add_recipe(request):
 
 @login_required
 def add_author(request):
+    context={}
     if request.method == 'POST':
         form=AddAuthorForm(request.POST)
         form.save()
         return HttpResponseRedirect('/')
     form = AddAuthorForm()
-    return render(request, "generic_form.html", {'form': form, 'heading': "Add an Author"})
+    if request.user.is_staff:
+        context.update({'form': form})
+        return render(request, "generic_form.html", context)
+    else:
+        context.update({
+            'heading': 'Sorry.', 'sub_heading':'Only admins may add authors.'
+            })
+        return render(request, "add_author_error.html", context)
+    
 
 def signup_view(request):
     if request.method == 'POST':
