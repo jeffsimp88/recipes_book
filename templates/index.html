@@ -17,9 +17,7 @@
     </ul>
     <div id="linksBox">
         <h5><a href="/addrecipe">Add a recipe</a></h5>
-        {% if request.user.is_staff %}
         <h5><a href="/addauthor">Add an author</a></h5>
-        {% endif %}
     </div>
     {% if request.user.is_authenticated %}
     <h3><a href="/logout">Logout</a></h3>
