@@ -3,6 +3,11 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 <div id="titleBox">
     <h1>Try out some Recipes!</h1>
+    {% if request.user.is_authenticated %}
+    <h3>Welcome, {{request.user.author}}!</h3>
+    {% else %}
+    <h3>Are you a <a href="/login">Current User</a> or <a href="/signup">New User</a>?</h3>
+    {% endif %}
     <h3>Click on one of the recipes below:</h3>
     <ul>
         {% for item in recipes%}
@@ -12,6 +17,11 @@
     </ul>
     <div id="linksBox">
         <h5><a href="/addrecipe">Add a recipe</a></h5>
+        {% if request.user.is_staff %}
         <h5><a href="/addauthor">Add an author</a></h5>
+        {% endif %}
     </div>
+    {% if request.user.is_authenticated %}
+    <h3><a href="/logout">Logout</a></h3>
+    {% endif %}
 </div>
