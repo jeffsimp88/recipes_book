@@ -26,7 +26,12 @@ def login_view(request):
                 return HttpResponseRedirect(request.GET.get('next', '/'))
 
     form = LoginForm()
-    return render(request, "generic_form.html", {'form': form, 'heading': "Login as a User"})
+    context = {
+        'form': form, 
+        'heading': "Login as a User", 
+        'logging_in': True,
+        }
+    return render(request, "generic_form.html", context)
 
 def logout_view(request):
     logout(request)
@@ -43,26 +48,38 @@ def author_details(request, author_id):
 
 @login_required
 def add_recipe(request):
-    context = {'heading': "Add a Recipe"}
-    if request.method == "POST":
-        form = AddRecipeForm(request.POST)
-        if form.is_valid():
-            data=form.cleaned_data
-            new_item = Recipe.objects.create(
-                title=data['title'],
-                author = request.user.author,
-                description = data['description'],
-                time_required = data['time_required'],
-                instructions = data['instructions'],
-
-            )
-            return HttpResponseRedirect('/')
-            
+    context = {'heading': "Add a Recipe"}            
     if request.user.is_staff:
+        if request.method == "POST":
+            form = AddRecipeAdminForm(request.POST)
+            if form.is_valid():
+                data=form.cleaned_data
+                new_item = Recipe.objects.create(
+                    title=data['title'],
+                    author = data['author'],
+                    description = data['description'],
+                    time_required = data['time_required'],
+                    instructions = data['instructions'],
+
+                )
+                return HttpResponseRedirect('/')
         form = AddRecipeAdminForm()
         context.update({'form': form})
         return render(request, "generic_form.html", context)
     else:
+        if request.method == "POST":
+            form = AddRecipeForm(request.POST)
+            if form.is_valid():
+                data=form.cleaned_data
+                new_item = Recipe.objects.create(
+                    title=data['title'],
+                    author = request.user.author,
+                    description = data['description'],
+                    time_required = data['time_required'],
+                    instructions = data['instructions'],
+
+                )
+                return HttpResponseRedirect('/')
         form = AddRecipeForm()
         context.update({'form': form})
         return render(request, "generic_form.html", context)
@@ -70,11 +87,11 @@ def add_recipe(request):
 @login_required
 def add_author(request):
     context={}
+    form = AddAuthorForm()
     if request.method == 'POST':
         form=AddAuthorForm(request.POST)
         form.save()
         return HttpResponseRedirect('/')
-    form = AddAuthorForm()
     if request.user.is_staff:
         context.update({'heading': 'Add an Author','form': form})
         return render(request, "generic_form.html", context)
@@ -103,4 +120,9 @@ def signup_view(request):
 
 
     form = SignupForm()
-    return render(request, "generic_form.html", {'form': form, 'heading': "Signup as a User"})
+    context ={
+        'form': form,
+        'heading': "Signup as a User",
+        'signing_in': True,
+    }
+    return render(request, "generic_form.html", context)
