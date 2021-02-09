@@ -34,7 +34,6 @@ def add_recipe(request):
 
             )
             return HttpResponseRedirect('/')
-            # return HttpResponseRedirect(reverse('recipe_details', args=[new_item.id]) )
             
 
     form = AddRecipeForm()
