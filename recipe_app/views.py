@@ -58,10 +58,14 @@ def add_recipe(request):
             )
             return HttpResponseRedirect('/')
             
-
-    form = AddRecipeForm()
-    context.update({'form': form})
-    return render(request, "generic_form.html", context)
+    if request.user.is_staff:
+        form = AddRecipeAdminForm()
+        context.update({'form': form})
+        return render(request, "generic_form.html", context)
+    else:
+        form = AddRecipeForm()
+        context.update({'form': form})
+        return render(request, "generic_form.html", context)
 
 @login_required
 def add_author(request):
@@ -72,7 +76,7 @@ def add_author(request):
         return HttpResponseRedirect('/')
     form = AddAuthorForm()
     if request.user.is_staff:
-        context.update({'form': form})
+        context.update({'heading': 'Add an Author','form': form})
         return render(request, "generic_form.html", context)
     else:
         context.update({
