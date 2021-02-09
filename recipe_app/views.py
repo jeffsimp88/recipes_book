@@ -30,7 +30,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect('/login')
+    return HttpResponseRedirect('/')
 
 def recipe_details(request, recipe_id):
     recipe = Recipe.objects.get(id=recipe_id)
