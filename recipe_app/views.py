@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect, reverse
 from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 
 from recipe_app.models import Author, Recipe
@@ -29,7 +29,8 @@ def login_view(request):
     return render(request, "generic_form.html", {'form': form, 'heading': "Login as a User"})
 
 def logout_view(request):
-    ...
+    logout(request)
+    return HttpResponseRedirect('/login')
 
 def recipe_details(request, recipe_id):
     recipe = Recipe.objects.get(id=recipe_id)
