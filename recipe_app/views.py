@@ -13,6 +13,35 @@ def index(request):
         "recipes": recipes
     })
 
+def signup_view(request):
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            new_user = User.objects.create_user(
+                username=data['username'],
+                password=data['password']
+            )
+            new_author = Author.objects.create(
+                name=data['name'],
+                bio=data['bio'],
+                user=new_user
+            )
+            user = authenticate(
+                request, username=data['username'], password=data['password']
+            )
+            if user:
+                login(request, user)
+                return HttpResponseRedirect(request.GET.get('next', '/'))
+            
+    form = SignupForm()
+    context ={
+        'form': form,
+        'heading': "Signup as a User",
+        'signing_in': True,
+    }
+    return render(request, "generic_form.html", context)
+
 def login_view(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -111,28 +140,3 @@ def add_author(request):
             })
         return render(request, "add_author_error.html", context)
     
-
-def signup_view(request):
-    if request.method == 'POST':
-        form = SignupForm(request.POST)
-        if form.is_valid():
-            data = form.cleaned_data
-            new_user = User.objects.create_user(
-                username=data['username'],
-                password=data['password']
-            )
-            new_author = Author.objects.create(
-                name=data['name'],
-                bio=data['bio'],
-                user=new_user
-            )
-            return HttpResponseRedirect('/')
-
-
-    form = SignupForm()
-    context ={
-        'form': form,
-        'heading': "Signup as a User",
-        'signing_in': True,
-    }
-    return render(request, "generic_form.html", context)
