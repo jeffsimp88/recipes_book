@@ -37,14 +37,30 @@ li{
 }
 
 a{
+    padding: 5px;
     color: rgb(177, 177, 36);
     transition-duration: .2s;
     text-decoration: none;
 }
+
+
 a:hover{
+    color: rgb(116, 192, 45);
+}
+#recipeList:hover{
     color: rgb(116, 192, 45);
     background-color: rgba(1, 1, 58, 0.22);
 }
+#logoutText{
+    padding: 5px;
+    color: rgb(177, 177, 36);
+    transition-duration: .2s;
+    text-decoration: none;
+}
+#logoutText:hover{
+    color: rgb(116, 192, 45);
+}
+
 #authorBox{
     display: flex;
     align-items: center;
@@ -105,4 +121,20 @@ transition-duration: .4s;
 #submitButton:hover{
 background-color: rgb(42, 56, 42);
 border: 1px solid rgba(218, 165, 32, 0.76);
+}
+
+.logoutLink{
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px;
+    background-color: rgba(98, 22, 22, 0.7);
+    border: 2px solid rgba(98, 22, 22, 0.7);
+    padding: 3px;
+    width: fit-content;
+    transition-duration: .4s;
+    margin: 10px;
+}
+.logoutLink:hover{
+    background-color: rgba(98, 22, 22, 0.89);
+    border: 2px solid rgba(177, 177, 36, 0.7);
+
 }
