@@ -10,7 +10,7 @@
         <p>Recipes by {{author.name}}:</p>
         <ul>
             {% for item in recipes%}
-            <li><a href="/recipes/{{item.id}}">{{item.title}}</a></li>
+            <li><a id="recipeList" href="/recipes/{{item.id}}">{{item.title}}</a></li>
             {% endfor %}
         </ul>
     </div>
