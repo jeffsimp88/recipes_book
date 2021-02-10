@@ -89,9 +89,19 @@ def add_author(request):
     context={}
     form = AddAuthorForm()
     if request.method == 'POST':
-        form=AddAuthorForm(request.POST)
-        form.save()
-        return HttpResponseRedirect('/')
+        form = AddAuthorForm(request.POST)
+        if form.is_valid():
+            data=form.cleaned_data
+            new_user = User.objects.create_user(
+                username=data['username'],
+                password=data['password']
+            )
+            new_author = Author.objects.create(
+                name=data['name'],
+                bio=data['bio'],
+                user=new_user
+            )
+            return HttpResponseRedirect('/')
     if request.user.is_staff:
         context.update({'heading': 'Add an Author','form': form})
         return render(request, "generic_form.html", context)
