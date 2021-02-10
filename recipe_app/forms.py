@@ -1,13 +1,11 @@
 from django import forms
 from recipe_app.models import Author
 
-class AddAuthorForm(forms.ModelForm):
-    class Meta:
-        model = Author
-        fields= [
-            'name',
-            'bio'
-        ]
+class AddAuthorForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    bio = forms.CharField(max_length=150)
+    username = forms.CharField(max_length=36)
+    password = forms.CharField(widget=forms.PasswordInput)
 
 class AddRecipeForm(forms.Form):
     title = forms.CharField(max_length=150)
