@@ -19,8 +19,9 @@
         <p>Favorite Recipes</p>
         <ul>
             {%for favorite in favorites%}
-            <li><a href="/recipes/{{favorite.id}}/">{{favorite.title}}</a> by <a
-                    href="/author/{{favorite.author.id}}">{{favorite.author}}</a></li>
+            <li><a id="recipeList" href="/recipes/{{favorite.id}}/">{{favorite.title}}</a> by
+                <a id="recipeList" href="/authors/{{favorite.author.id}}">{{favorite.author}}</a>
+            </li>
             {%endfor%}
         </ul>
     </div>
