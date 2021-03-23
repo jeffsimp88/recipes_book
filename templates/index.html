@@ -4,7 +4,7 @@
 <div id="titleBox">
     <h1>Try out some Recipes!</h1>
     {% if request.user.is_authenticated %}
-    <h3>Welcome, {{request.user.author}}!</h3>
+    <h3>Welcome, <a style="padding: 0px;" href="/authors/{{request.user.author.id}}">{{request.user.author}}</a>!</h3>
     {% else %}
     <h3>Are you a <a href="/login">Current User</a> or <a href="/signup">New User</a>?
     </h3>
