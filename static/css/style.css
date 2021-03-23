@@ -22,7 +22,6 @@ h3, h5{
 img{
     border-radius: 3%;
     height: 100px;
-    border: 5px groove rgb(0, 81, 14);
 }
 
 p{
@@ -43,6 +42,10 @@ a{
     transition-duration: .2s;
     text-decoration: none;
 }
+a:hover{
+    color: rgb(42, 56, 42);
+    background-color: rgba(177, 177, 36, 0.7);
+}
 .recipeTitle{
     display: flex;
     flex-direction: row;
@@ -50,8 +53,12 @@ a{
     align-items: baseline;
 }
 .starImg{
-    border: 0px;
     height: 35px;
+    transition-duration: .2s;
+}
+
+.starImg:hover{
+    background-color: rgba(42, 56, 42, 0.4);
 }
 
 .recipeEdit{
@@ -59,21 +66,25 @@ a{
     flex-direction: column;
     justify-content: right;
 }
-a:hover{
-    color: rgb(116, 192, 45);
-}
 #recipeList:hover{
-    color: rgb(116, 192, 45);
-    background-color: rgba(1, 1, 58, 0.22);
+    color: rgb(42, 56, 42);
+    background-color: rgba(177, 177, 36, 0.7);
 }
 #logoutText{
-    padding: 5px;
+    box-sizing: border-box;
     color: rgb(177, 177, 36);
-    transition-duration: .2s;
     text-decoration: none;
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px;
+    background-color: rgba(98, 22, 22, 0.7);
+    padding: 8px;
+    width: fit-content;
+    transition-duration: .4s;
+    margin: 10px;
 }
 #logoutText:hover{
-    color: rgb(116, 192, 45);
+    color: rgb(98, 22, 22);
+    background-color: rgba(177, 177, 36, 0.7);
 }
 
 #authorBox{
@@ -104,8 +115,13 @@ a:hover{
     max-width: 468px;
     background-color: rgba(42, 56, 42, 0.7);
 }
-
+.links{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
 #linksBox{
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -113,7 +129,14 @@ a:hover{
     border-radius: 2%;
     min-width: fit-content;
     max-width: 234px;
-    background-color: rgba(42, 56, 42, 0.7);    
+    background-color: rgba(42, 56, 42, 0.7);  
+    transition-duration: .2s;  
+}
+
+#linksBox:hover{
+    background-color: rgba(177, 177, 36, .7); 
+    color: rgb(42, 56, 42);   
+
 }
 
 input, textarea, option, select{
@@ -138,18 +161,3 @@ background-color: rgb(42, 56, 42);
 border: 1px solid rgba(218, 165, 32, 0.76);
 }
 
-.logoutLink{
-    font-family: 'Roboto Slab', serif;
-    font-size: 17px;
-    background-color: rgba(98, 22, 22, 0.7);
-    border: 2px solid rgba(98, 22, 22, 0.7);
-    padding: 3px;
-    width: fit-content;
-    transition-duration: .4s;
-    margin: 10px;
-}
-.logoutLink:hover{
-    background-color: rgba(98, 22, 22, 0.89);
-    border: 2px solid rgba(177, 177, 36, 0.7);
-
-}
