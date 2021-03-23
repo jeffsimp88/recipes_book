@@ -37,13 +37,28 @@ li{
 }
 
 a{
+    font-family: 'Merriweather', serif;
     padding: 5px;
     color: rgb(177, 177, 36);
     transition-duration: .2s;
     text-decoration: none;
 }
+.recipeTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.starImg{
+    border: 0px;
+    height: 35px;
+}
 
-
+.recipeEdit{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
 a:hover{
     color: rgb(116, 192, 45);
 }
