@@ -16,12 +16,12 @@
         {% endfor %}
 
     </ul>
-    <div id="linksBox">
-        <h5><a id="recipeList" href="/addrecipe">Add a recipe</a></h5>
-        <h5><a id="recipeList" href="/addauthor">Add an author</a></h5>
+    <div class="links">
+        <a id="linksBox" href="/addrecipe">Add a recipe</a>
+        <a id="linksBox" href="/addauthor">Add an author</a>
     </div>
     {% if request.user.is_authenticated %}
-    <div class="logoutLink"><a id="logoutText" href="/logout">Logout</a></div>
-
+    <br>
+    <a id="logoutText" href="/logout">Logout</a>
     {% endif %}
 </div>
