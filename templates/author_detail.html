@@ -3,8 +3,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 <div id="authorBox">
     <h1>Author: {{author.name}}</h1>
-    <img src="{% static 'images/'%}{{author.name|lower|slugify}}.jpg" alt="{{author.name}} Profile"
-        onerror="this.src='/static/images/defaultImage.png'">
+    <!-- <img src="{% static 'images/'%}{{author.name|lower|slugify}}.jpg" alt="{{author.name}} Profile"
+        onerror="this.src='/static/images/defaultImage.png'"> -->
     <h3>Bio: {{author.bio}}</h3>
     <div id="recipeBox">
         <p>Recipes by {{author.name}}:</p>
