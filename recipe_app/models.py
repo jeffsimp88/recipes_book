@@ -1,37 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User 
-
-# Create your models here.
-"""
-User:
----
-username
-password
-email
-
-one to one
-
-Author:
----
-name (CharField)
-bio (CharField)
-
-one to many
-
-Recipe:
----
-title (CharField)
-author (ForeignKey)
-description (TextField)
-Time Required (CharField)
-Instructions (TextField)
-"""
+from django.contrib.auth.models import User
 
 class Author(models.Model):
     name = models.CharField(max_length=100)
     bio = models.CharField(max_length=150)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    
+    favorite_recipes = models.ManyToManyField("Recipe", related_name='favorite_recipes', blank=True)
     def __str__(self):
         return self.name
 
