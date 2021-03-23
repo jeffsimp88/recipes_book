@@ -2,17 +2,23 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 <div id="titleBox">
-    <h1>{{recipe.title}}</h1>
-    {% if request.user.is_authenticated %}
-    {% if is_favorited %}
-    <h5><a href="/favoriterecipe/{{recipe.id}}">Unfavorite</a></h5>
-    {% else %}
-    <h5><a href="/favoriterecipe/{{recipe.id}}">Favorite</a></h5>
-    {% endif %}
-    {% if recipe.author.user == request.user or request.user.is_staff %}
-    <h5><a href="/editrecipe/{{recipe.id}}">edit</a></h5>
-    {% endif %}
-    {% endif %}
+    <div class="recipeTitle">
+        <h1>{{recipe.title}}</h1>
+        <div class="recipeEdit">
+            {% if request.user.is_authenticated %}
+            {% if is_favorited %}
+            <a class="starImg" href="/favoriterecipe/{{recipe.id}}"><img class="starImg"
+                    src="{% static 'images/star.png'%}" alt="star"></a>
+            {% else %}
+            <a class="starImg" href="/favoriterecipe/{{recipe.id}}"><img class="starImg"
+                    src="{% static 'images/star_empty.png'%}" alt="star"></a>
+            {% endif %}
+            {% if recipe.author.user == request.user or request.user.is_staff %}
+            <a href="/editrecipe/{{recipe.id}}">edit</a>
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
     <h3>by <a href="/authors/{{recipe.author.id}}">{{recipe.author.name}}</a> </h3>
 
     <p><strong>About the Recipe: </strong> <br> {{recipe.description}}</p>
