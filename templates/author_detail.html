@@ -14,5 +14,18 @@
             {% endfor %}
         </ul>
     </div>
+    {% if favorites %}
+    <div id="recipeBox">
+        <p>Favorite Recipes</p>
+        <ul>
+            {%for favorite in favorites%}
+            <li><a href="/recipes/{{favorite.id}}/">{{favorite.title}}</a> by <a
+                    href="/author/{{favorite.author.id}}">{{favorite.author}}</a></li>
+            {%endfor%}
+        </ul>
+    </div>
+
+    {% endif %}
+
 </div>
 <h5><a href="/">Back to Homepage</a></h5>
