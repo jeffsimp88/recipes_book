@@ -16,5 +16,5 @@ ptyprocess==0.6.0
 Pygments==2.7.3
 pytz==2021.1
 sqlparse==0.4.1
-traitlets==5.0.0
+traitlets==4.3.3
 wcwidth==0.2.5
