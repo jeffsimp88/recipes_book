@@ -12,16 +12,23 @@ Basic functionallity of the Recipe Box:
 See screenshots of the proof of concept. All screen shots are from working Django code using Python, HTML, and CSS.
 
 ### Login Screen ###
-![login screen](https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg6.jpg "Login Screen")
+<img width="500" src="https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg6.jpg">
+
 ### Homepage ###
-![login screen](https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg7.jpg "Homepage")
+<img width="500" src="https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg7.jpg">
+
 ### Add Author Page ###
-![Add Author Page](https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg4.jpg "Add Author Page")
+<img width="500" src="https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg4.jpg">
+
 ### Add Recipe Page ###
-![Add Recipe Page](https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg5.jpg "Add Recipe Page")
+<img width="500" src="https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg5.jpg">
+
 ### User Profile Page ###
-![User Profile Page](https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg1.jpg "User Profile Page")
+<img width="500" src="https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg1.jpg">
+
 ### Recipe Details Page ###
-![Recipe Details Page](https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg2.jpg "Recipe Details Page")
+<img width="500" src="https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg2.jpg">
+
 ### Edit Recipe Page ###
-![Edit Recipe Page](https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg3.jpg "Edit Recipe Page")
+<img width="500" src="https://raw.githubusercontent.com/jeffsimp88/recipes_book/main/recipeBox%20images/RecipeBoxImg3.jpg">
+
